@@ -5,6 +5,7 @@ import Login from './components/Login/Login.js'
 import Footer from './components/Footer/Footer.js'
 import Main from './components/Main/Main.js'
 import Register from './components/Register/Register.js'
+import AddAlbum from './components/AddAlbum/AddAlbum.js'
 import {Route, Switch} from 'react-router-dom'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact component={Main}/>
            <Route path="/login" exact component={Login}/>
            <Route path="/register" exact component={Register}/>
+           <Route path="/add-album" exact component={AddAlbum}/>
         </Switch>
       <Footer />
     </div>
