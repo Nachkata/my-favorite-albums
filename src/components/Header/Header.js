@@ -12,7 +12,7 @@ const Header = () => {
                 <a><li><Link to="/login">LOGIN</Link></li></a>
                 <a><li><Link to="/register">REGISTER</Link></li></a>
                 <a><li><Link to="/add-album">ADD AN ALBUM</Link></li></a>
-                <a><li><Link to="/about">ABOUT</Link></li></a>
+                <a><li><Link to="/my-albums">MY ALBUMS</Link></li></a>
                 <a><li><Link to="/">LOG OUT</Link></li></a>
             </ul>
         </div>
