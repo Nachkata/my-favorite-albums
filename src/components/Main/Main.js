@@ -1,32 +1,25 @@
 import style from "../Main/Main.css"
+import Album from "../Album/Album";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
 
+//{this.state.albums.map(x=><Album name="{x.name}"/>)}
 const Main = () => {
+    const [albums, setAlbums] = useState([]);
+    useEffect(() => {
+        let albums = fetch('http://localhost:5000/albums')
+            .then(res => res.json())
+            .then(res => setAlbums(res))
+    }, [])
+    console.log(albums);
     return (
-        <div className="site-content">
-            <h1>PLEASE, CHOOSE AN ALBUM</h1>
+        <div className="site-content body">
+            <h1 class="please-choose">PLEASE, CHOOSE AN ALBUM</h1>
             <div class="body-main">
-            <div class="card">
-                <div class="imgBx">
-                    <img src="https://static.qobuz.com/images/covers/qc/2e/wv6zsdv3g2eqc_600.jpg" />
-                </div>
-                <div class="contentBx">
-                    <h3>Goodbye And Good Ridance</h3>
-                    <h3>Juice Wrld</h3>
-                </div>
-                <button class="btn"><Link to="/details/0001">DETAILS</Link></button>
+                {albums ? albums.map(album => (
+                    <Album key={album.name} album={album}/>
+                )) : null}
             </div>
-            <div class="card">
-                <div class="imgBx">
-                    <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpB9WL7XfkMHquhmWlSKcIe9YdslKu3Rl3kQ&usqp=CAU" />
-                </div>
-                <div class="contentBx">
-                    <h3>Die Lit</h3>
-                    <h3>Playboi Carti</h3>
-                </div>
-                <button class="btn"><Link to="/details/0002">DETAILS</Link></button>
-            </div>
-        </div>
         </div>
     )
 }
