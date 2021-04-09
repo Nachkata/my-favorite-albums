@@ -1,4 +1,6 @@
 # Getting Started with Create React App
+This is my brand new site. After you register you can choose your favourite albums and add them to your collection. Also you have an option to create a brand new custom album. 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
